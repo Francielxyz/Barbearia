@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "1020pso",
     "database": "barbearia",
     "host": "127.0.0.1",
     "dialect": "mysql"
