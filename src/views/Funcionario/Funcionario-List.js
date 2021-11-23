@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
-import config from '../../../config/config';
 import {View, Text, Keyboard, TextInput, TouchableWithoutFeedback, TouchableOpacity} from 'react-native';
 import { css } from '../../../assets/css/css';
+import api from '../../services/api'
 
 
 export default function CadastroFuncionario(){
@@ -10,13 +10,23 @@ export default function CadastroFuncionario(){
     const [telefone, setTelefone] = useState(null);
     const [mensagem, setMensagem] = useState(null);
 
-    //Função que enviar os dados do formulário para o backend
+    useEffect(() => {
+        api.post("salvarFuncionario",{
+            nomeFuncionario: nome,
+            telefoneFuncionario: telefone,
+        }).then((response) => setUser(response.data))
+            .catch((err) => {
+                console.error("Ops! Ocorreu um erro" + err);
+            });
+    }, []);
+
+    //Função que chama api para salvar um funcionário
     async  function  registrarFuncionario(){
 
-        let request = await fetch(config.urlRootNode+'createFuncionario',{
+        let request = await fetch(api + 'salvarFuncionario',{
             method: 'POST',
             headers:{
-                'Accept': 'application/json',
+                "Accept": 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
@@ -24,6 +34,7 @@ export default function CadastroFuncionario(){
                 telefoneFuncionario: telefone,
             })
         });
+        console.log(request);
 
         let resposta = await request.json();
         setMensagem(resposta);

@@ -11,6 +11,7 @@
     "@react-native-masked-view/masked-view": "0.2.4",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/stack": "^6.0.11",
+    "apisauce": "^2.1.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "expo": "~42.0.1",
@@ -20,7 +21,9 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~1.10.2",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "~0.13.12",
     "sequelize": "^6.8.0"
   },
@@ -31,5 +34,18 @@
     "sequelize-cli": "^6.2.0",
     "typescript": "~4.0.0"
   },
-  "private": true
+  "private": true,
+  "name": "barbearia",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Francielxyz/Barbearia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Francielxyz/Barbearia/issues"
+  },
+  "homepage": "https://github.com/Francielxyz/Barbearia#readme",
+  "description": ""
 }
